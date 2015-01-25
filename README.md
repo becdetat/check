@@ -47,7 +47,7 @@ Checks that the target expression result is not null or empty.
 ### Type
 The type invariant checker contains check methods for `System.Type`.
 
-#### HasPublicConstructorWithParameters
+#### `HasPublicConstructorWithParameters`
 Checks that the type contains a public constructor that takes the provided parameter types (in order).
 
 	Check.That(typeof(TTaxCalulator)).HasPublicConstructorWithParameters(
