@@ -91,5 +91,5 @@ The checker type and the target type both have to be passed to `Check.That` for 
 
 ## License
 
-
+[Apache License Version 2.0](LICENSE)
 
