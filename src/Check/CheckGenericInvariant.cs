@@ -22,11 +22,12 @@ namespace Check
         /// Check that the target value is not null.
         /// Throws an InvariantShouldNotBeNullException if the target value is null.
         /// </summary>
-        public void IsNotNull()
+        /// <param name="message">An optional message that overrides the automatically generated one if the check fails</param>
+        public void IsNotNull(string message = null)
         {
             if (object.ReferenceEquals(TargetValue, null))
             {
-                throw new InvariantShouldNotBeNullException(FieldName);
+                throw new InvariantShouldNotBeNullException(FieldName, message);
             }
         }
 

@@ -7,12 +7,14 @@ namespace Check.Exceptions
     {
         private readonly Expression<Func<bool>> _target;
 
-        public InvariantShouldBeTrueException(Expression<Func<bool>> target)
+        public InvariantShouldBeTrueException(
+            Expression<Func<bool>> target)
+            : base(null)
         {
             _target = target;
         }
 
-        public override string Message
+        protected override string AutoMessage
         {
             get
             {

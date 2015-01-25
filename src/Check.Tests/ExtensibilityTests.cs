@@ -46,8 +46,10 @@ namespace Check.Tests
 
         class ViewModelMustBeValidException : InvariantFieldException
         {
-            public ViewModelMustBeValidException(string fieldName)
-               : base(fieldName)
+            public ViewModelMustBeValidException(
+                string fieldName,
+                string message = null)
+               : base(fieldName, message)
             {
             }
 

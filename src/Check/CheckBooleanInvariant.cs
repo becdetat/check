@@ -9,7 +9,9 @@ namespace Check
     /// </summary>
     public class CheckBooleanInvariant : CheckGenericInvariant<bool>
     {
-        public CheckBooleanInvariant(Expression<Func<bool>> target) : base(target)
+        public CheckBooleanInvariant(
+            Expression<Func<bool>> target) 
+            : base(target)
         {
             if (!TargetValue)
             {

@@ -62,7 +62,8 @@ namespace Check
         /// </summary>
         /// <param name="target">An expression that results in a boolean</param>
         /// <returns>A check invariant instance for a boolean</returns>
-        public static CheckBooleanInvariant That(Expression<Func<bool>> target)
+        public static CheckBooleanInvariant That(
+            Expression<Func<bool>> target)
         {
             return new CheckBooleanInvariant(target);
         }

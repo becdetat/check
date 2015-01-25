@@ -12,13 +12,15 @@ namespace Check.Exceptions
 
         public InvariantShouldHavePublicConstructorWithParametersException(
             Expression<Func<Type>> target,
-            Type[] types )
+            Type[] types,
+            string message)
+            : base(message)
         {
             _target = target;
             _types = types;
         }
 
-        public override string Message
+        protected override string AutoMessage
         {
             get { return string.Format(
                 "{0} should have a public constructor accepting ({1})",

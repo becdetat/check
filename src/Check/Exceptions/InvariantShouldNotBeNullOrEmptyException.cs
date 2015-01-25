@@ -2,12 +2,12 @@ namespace Check.Exceptions
 {
     public class InvariantShouldNotBeNullOrEmptyException : InvariantFieldException
     {
-        public InvariantShouldNotBeNullOrEmptyException(string fieldName)
-            : base(fieldName)
+        public InvariantShouldNotBeNullOrEmptyException(string fieldName, string message)
+            : base(fieldName, message)
         {
         }
 
-        public override string Message
+        protected override string AutoMessage
         {
             get { return string.Format("{0} should not be null or empty", FieldName); }
         }

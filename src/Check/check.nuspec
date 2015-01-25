@@ -9,9 +9,9 @@
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <projectUrl>https://github.com/bendetat/check</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A domain invariants helper library</description>
+    <description>A class invariants helper library</description>
     <summary></summary>
-    <releaseNotes>Fix license</releaseNotes>
-    <tags>domain invariant invariants check</tags>
+    <releaseNotes>Add failure message overrides</releaseNotes>
+    <tags>class invariant invariants domain validation check guard clause assert assertion contract</tags>
   </metadata>
 </package>

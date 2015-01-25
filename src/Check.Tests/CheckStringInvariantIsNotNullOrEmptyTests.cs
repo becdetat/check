@@ -42,5 +42,16 @@ namespace Check.Tests
 
             exception.Message.ShouldBe("test should not be null or empty");
         }
+
+        [Fact]
+        public void CustomMessageIsValid()
+        {
+            string test = null;
+
+            var exception = Should.Throw<Exception>(
+                () => Check.That(() => test).IsNotNullOrEmpty("Test is required"));
+
+            exception.Message.ShouldContainWithoutWhitespace("Test is required test should not be null or empty");
+        }
     }
 }

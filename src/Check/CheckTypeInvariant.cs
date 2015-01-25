@@ -19,14 +19,16 @@ namespace Check
         /// types, in the provided order.
         /// </summary>
         /// <param name="types">The types of the constructor parameters to search for</param>
-        public void HasPublicConstructorWithParameters(params Type[] types)
+        public void HasPublicConstructorWithParameters(
+            params Type[] types)
         {
             if (!TargetValue.GetConstructors()
                 .Any(x => types.SequenceEqual(x.GetParameters().Select(p => p.ParameterType))))
             {
                 throw new InvariantShouldHavePublicConstructorWithParametersException(
                     Target,
-                    types);
+                    types,
+                    message: null);
             }
         }
     }
