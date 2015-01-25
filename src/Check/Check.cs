@@ -55,5 +55,16 @@ namespace Check
         {
             return new CheckTypeInvariant(target);
         }
+
+        /// <summary>
+        /// Create an invariant check instance for a boolean expression which executes
+        /// immediately and checks for boolean true
+        /// </summary>
+        /// <param name="target">An expression that results in a boolean</param>
+        /// <returns>A check invariant instance for a boolean</returns>
+        public static CheckBooleanInvariant That(Expression<Func<bool>> target)
+        {
+            return new CheckBooleanInvariant(target);
+        }
     }
 }
