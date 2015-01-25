@@ -28,9 +28,9 @@ namespace Check.Tests
             }
         }
 
-        class CheckValidatableViewModelInvariant : CheckGenericInvariant<IValidatableViewModel>
+        class CheckValidatableViewModel : CheckGenericInvariant<IValidatableViewModel>
         {
-            public CheckValidatableViewModelInvariant(Expression<Func<IValidatableViewModel>> target) 
+            public CheckValidatableViewModel(Expression<Func<IValidatableViewModel>> target) 
                 : base(target)
             {
             }
@@ -68,7 +68,7 @@ namespace Check.Tests
 
             Should.NotThrow(() =>
                 Check
-                    .That<IValidatableViewModel, CheckValidatableViewModelInvariant>(() => test)
+                    .That<IValidatableViewModel, CheckValidatableViewModel>(() => test)
                     .IsValid());
         }
 
@@ -83,7 +83,7 @@ namespace Check.Tests
 
             Should.Throw<ViewModelMustBeValidException>(() =>
                 Check
-                    .That<IValidatableViewModel, CheckValidatableViewModelInvariant>(() => test)
+                    .That<IValidatableViewModel, CheckValidatableViewModel>(() => test)
                     .IsValid());
         }
 
@@ -98,7 +98,7 @@ namespace Check.Tests
 
             var exception = Should.Throw<ViewModelMustBeValidException>(() =>
                 Check
-                    .That<IValidatableViewModel, CheckValidatableViewModelInvariant>(() => test)
+                    .That<IValidatableViewModel, CheckValidatableViewModel>(() => test)
                     .IsValid());
 
             exception.Message.ShouldBe("test view model is invalid");
