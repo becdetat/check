@@ -47,11 +47,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckGenericInvariantIsNotNullTests.cs" />
     <Compile Include="CheckStringInvariantIsNotNullOrEmptyTests.cs" />
+    <Compile Include="CheckTypeInvariantHasConstructorWithParameters.cs" />
+    <Compile Include="ExtensibilityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Check\Check.csproj">
+      <Project>{a8776be7-5798-41b0-b6b8-d64f5ed45c11}</Project>
+      <Name>Check</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

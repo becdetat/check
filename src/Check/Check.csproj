@@ -39,7 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Check.cs" />
+    <Compile Include="CheckGenericInvariant.cs" />
+    <Compile Include="CheckStringInvariant.cs" />
+    <Compile Include="CheckTypeInvariant.cs" />
+    <Compile Include="Exceptions\InvariantFieldException.cs" />
+    <Compile Include="Exceptions\InvariantShouldNotBeNullException.cs" />
+    <Compile Include="Exceptions\InvariantShouldNotBeNullOrEmptyException.cs" />
+    <Compile Include="Exceptions\InvariantException.cs" />
+    <Compile Include="Exceptions\InvariantShouldHavePublicConstructorWithParametersException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
