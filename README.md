@@ -3,6 +3,16 @@ Check
 
 A domain invariants helper library.
 
+
+## Installation
+
+Use [NuGet](https://www.nuget.org/packages/check):
+
+	PM> Install-Package check
+
+
+## Usage
+
 	Check.That(() => firstName).IsNotNull();
 	Check.That(() => lastName).IsNotNullOrEmpty();
 	Check.That(() => dateOfBirth.Year < 1989);
@@ -91,5 +101,5 @@ The checker type and the target type both have to be passed to `Check.That` for 
 
 ## License
 
-[Apache License Version 2.0](LICENSE)
+[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 

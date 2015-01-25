@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>check</id>
+    <version>$version$</version>
+    <title>check</title>
+    <authors>Ben Scott</authors>
+    <owners>Ben Scott</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/bendetat/check</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A domain invariants helper library</description>
+    <summary></summary>
+    <releaseNotes>Fix license</releaseNotes>
+    <tags>domain invariant invariants check</tags>
+  </metadata>
+</package>
