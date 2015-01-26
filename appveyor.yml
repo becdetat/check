@@ -1,15 +1,21 @@
 version: "{build}"
 
+install:
+  - ps: .\appveyor.install.ps1
+
 assembly_info:
-	patch: true
-	file: AssemblyInfo.*
-	assembly_version: "$(ASSEMBLY_VERSION)"
-	assembly_file_version: "$(ASSEMBLY_FILE_VERSION)"
-	assembly_informational_version: "$(ASSEMBLY_INFORMATION_VERSION)"
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "$(ASSEMBLY_VERSION)"
+  assembly_file_version: "$(ASSEMBLY_FILE_VERSION)"
+  assembly_informational_version: "$(ASSEMBLY_INFORMATIONAL_VERSION)"
 
 platform: Any CPU
 
 configuration: Release
 
-buid:
-	publish_nuget: true
+build:
+  publish_nuget: true
+
+cache:
+  - packages
