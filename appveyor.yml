@@ -3,8 +3,6 @@ version: "{build}"
 install:
   - ps: .\appveyor.install.ps1
 
-version: "{build}"
-
 assembly_info:
   patch: true
   file: AssemblyInfo.*
