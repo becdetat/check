@@ -1,5 +1,5 @@
-Check
-=====
+# Check [![Build status](https://ci.appveyor.com/api/projects/status/3vi28q9scgpjgr4j/branch/master?svg=true)](https://ci.appveyor.com/project/bendetat/check/branch/master)
+
 
 A class invariants helper library.
 
