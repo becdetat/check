@@ -1,6 +1,5 @@
 using System;
 using System.Linq.Expressions;
-using Check;
 using Checkk.Exceptions;
 
 namespace Checkk

@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Checkk.Exceptions;
 
-namespace Check
+namespace Checkk
 {
     /// <summary>
     /// Methods for checking a generic instance of T
