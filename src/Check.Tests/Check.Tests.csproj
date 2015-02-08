@@ -59,7 +59,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Check\Check.csproj">
+    <ProjectReference Include="..\Checkk\Checkk.csproj">
       <Project>{a8776be7-5798-41b0-b6b8-d64f5ed45c11}</Project>
       <Name>Check</Name>
     </ProjectReference>
