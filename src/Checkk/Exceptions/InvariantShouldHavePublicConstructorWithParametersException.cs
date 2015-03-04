@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 namespace Checkk.Exceptions
 {
     public class InvariantShouldHavePublicConstructorWithParametersException
-        : InvariantException
+        : WreckYourself
     {
         private readonly Expression<Func<Type>> _target;
         private readonly Type[] _types;

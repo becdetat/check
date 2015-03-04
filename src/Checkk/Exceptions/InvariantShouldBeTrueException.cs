@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace Checkk.Exceptions
 {
-    public class InvariantShouldBeTrueException : InvariantException
+    public class InvariantShouldBeTrueException : WreckYourself
     {
         private readonly Expression<Func<bool>> _target;
 

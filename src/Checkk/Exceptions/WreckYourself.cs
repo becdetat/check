@@ -4,10 +4,10 @@ using System.Text.RegularExpressions;
 
 namespace Checkk.Exceptions
 {
-    public class InvariantException : Exception
+    public class WreckYourself : Exception
     {
         private readonly string _message;
-        protected InvariantException(string message)
+        protected WreckYourself(string message)
         {
             _message = message;
         }

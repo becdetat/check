@@ -12,7 +12,7 @@ namespace Checkk.Tests
         {
             var guid = Guid.NewGuid();
 
-            Should.NotThrow(() => Check.That(() => guid).IsNotNullOrEmpty());
+            Should.NotThrow(() => Check.Yourself(() => guid).IsNotNullOrEmpty());
         }
 
         [Fact]
@@ -21,7 +21,7 @@ namespace Checkk.Tests
             var guid = Guid.Empty;
 
             Should.Throw<InvariantShouldNotBeNullOrEmptyException>(
-                () => Check.That(() => guid).IsNotNullOrEmpty());
+                () => Check.Yourself(() => guid).IsNotNullOrEmpty());
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace Checkk.Tests
             var guid = default(Guid);
 
             Should.Throw<InvariantShouldNotBeNullOrEmptyException>(
-                () => Check.That(() => guid).IsNotNullOrEmpty());
+                () => Check.Yourself(() => guid).IsNotNullOrEmpty());
         }
     }
 }

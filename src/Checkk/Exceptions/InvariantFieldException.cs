@@ -1,6 +1,6 @@
 namespace Checkk.Exceptions
 {
-    public class InvariantFieldException : InvariantException
+    public class InvariantFieldException : WreckYourself
     {
         protected readonly string FieldName;
 

@@ -48,7 +48,7 @@
     <Compile Include="Exceptions\InvariantFieldException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullOrEmptyException.cs" />
-    <Compile Include="Exceptions\InvariantException.cs" />
+    <Compile Include="Exceptions\WreckYourself.cs" />
     <Compile Include="Exceptions\InvariantShouldHavePublicConstructorWithParametersException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeTrueException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

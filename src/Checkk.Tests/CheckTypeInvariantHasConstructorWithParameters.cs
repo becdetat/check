@@ -17,7 +17,7 @@ namespace Checkk.Tests
         public void MatchingParameterTypesPass()
         {
             Should.NotThrow(() =>
-                Check.That(() => typeof (Foo)).HasPublicConstructorWithParameters(
+                Check.Yourself(() => typeof (Foo)).HasPublicConstructorWithParameters(
                     typeof (string),
                     typeof (int)));
         }
@@ -26,7 +26,7 @@ namespace Checkk.Tests
         public void NonMatchingParameterTypesFail()
         {
             Should.Throw<InvariantShouldHavePublicConstructorWithParametersException>(
-                () => Check.That(() => typeof(Foo)).HasPublicConstructorWithParameters(
+                () => Check.Yourself(() => typeof(Foo)).HasPublicConstructorWithParameters(
                     typeof(float)));
         }
 
@@ -35,7 +35,7 @@ namespace Checkk.Tests
         {
             var exception =
                 Should.Throw<InvariantShouldHavePublicConstructorWithParametersException>(
-                    () => Check.That(() => typeof (Foo)).HasPublicConstructorWithParameters(
+                    () => Check.Yourself(() => typeof (Foo)).HasPublicConstructorWithParameters(
                         typeof (float)));
 
             exception.Message.ShouldBe(

@@ -12,7 +12,7 @@ namespace Checkk.Tests
         {
             const string test = "hi";
 
-            Should.NotThrow(() => Check.That(() => test).IsNotNullOrEmpty());
+            Should.NotThrow(() => Check.Yourself(() => test).IsNotNullOrEmpty());
         }
 
         [Fact]
@@ -21,7 +21,7 @@ namespace Checkk.Tests
             var test = string.Empty;
 
             Should.Throw<InvariantShouldNotBeNullOrEmptyException>(
-                () => Check.That(() => test).IsNotNullOrEmpty());
+                () => Check.Yourself(() => test).IsNotNullOrEmpty());
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace Checkk.Tests
             string test = null;
 
             Should.Throw<InvariantShouldNotBeNullOrEmptyException>(
-                () => Check.That(() => test).IsNotNullOrEmpty());
+                () => Check.Yourself(() => test).IsNotNullOrEmpty());
         }
 
         [Fact]
@@ -38,7 +38,7 @@ namespace Checkk.Tests
         {
             string test = null;
 
-            var exception = Should.Throw<Exception>(() => Check.That(() => test).IsNotNullOrEmpty());
+            var exception = Should.Throw<Exception>(() => Check.Yourself(() => test).IsNotNullOrEmpty());
 
             exception.Message.ShouldBe("test should not be null or empty");
         }
@@ -49,7 +49,7 @@ namespace Checkk.Tests
             string test = null;
 
             var exception = Should.Throw<Exception>(
-                () => Check.That(() => test).IsNotNullOrEmpty("Test is required"));
+                () => Check.Yourself(() => test).IsNotNullOrEmpty("Test is required"));
 
             exception.Message.ShouldContainWithoutWhitespace("Test is required test should not be null or empty");
         }
