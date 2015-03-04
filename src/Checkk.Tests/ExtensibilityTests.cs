@@ -66,7 +66,7 @@ namespace Checkk.Tests
 
             Should.NotThrow(() =>
                 Check
-                    .That<IValidatableViewModel, CheckValidatableViewModel>(() => test)
+                    .Yourself<IValidatableViewModel, CheckValidatableViewModel>(() => test)
                     .IsValid());
         }
 
@@ -81,7 +81,7 @@ namespace Checkk.Tests
 
             Should.Throw<ViewModelMustBeValidException>(() =>
                 Check
-                    .That<IValidatableViewModel, CheckValidatableViewModel>(() => test)
+                    .Yourself<IValidatableViewModel, CheckValidatableViewModel>(() => test)
                     .IsValid());
         }
 
@@ -96,7 +96,7 @@ namespace Checkk.Tests
 
             var exception = Should.Throw<ViewModelMustBeValidException>(() =>
                 Check
-                    .That<IValidatableViewModel, CheckValidatableViewModel>(() => test)
+                    .Yourself<IValidatableViewModel, CheckValidatableViewModel>(() => test)
                     .IsValid());
 
             exception.Message.ShouldBe("test view model is invalid");

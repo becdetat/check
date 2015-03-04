@@ -17,7 +17,7 @@ namespace Checkk.Tests
             var test = new Foo();
 
             Should.NotThrow(
-                () => Check.That(() => test).IsNotNull());
+                () => Check.Yourself(() => test).IsNotNull());
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace Checkk.Tests
             Foo test = null;
 
             Should.Throw<InvariantShouldNotBeNullException>(
-                () => Check.That(() => test).IsNotNull());
+                () => Check.Yourself(() => test).IsNotNull());
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace Checkk.Tests
             Foo test = null;
 
             var exception = Should.Throw<Exception>(
-                () => Check.That(() => test).IsNotNull());
+                () => Check.Yourself(() => test).IsNotNull());
 
             exception.Message.ShouldBe("test should not be null");
         }

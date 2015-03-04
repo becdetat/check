@@ -13,7 +13,7 @@ namespace Checkk.Tests
             const string test = "Hi there";
 
             Should.NotThrow(
-                () => Check.That(() => test.Length == 8));
+                () => Check.Yourself(() => test.Length == 8));
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace Checkk.Tests
             const string test = "Hi there";
 
             Should.Throw<InvariantShouldBeTrueException>(
-                () => Check.That(() => test == string.Empty));
+                () => Check.Yourself(() => test == string.Empty));
         }
 
         [Fact]
@@ -31,16 +31,16 @@ namespace Checkk.Tests
             const string test = "Hi there";
 
             Should
-                .Throw<Exception>(() => Check.That(() => test.Length == 2))
+                .Throw<Exception>(() => Check.Yourself(() => test.Length == 2))
                 .Message.ShouldBe("(\"Hi there\".Length == 2) should be true");
 
             Should
-                .Throw<Exception>(() => Check.That(() => test == string.Empty))
+                .Throw<Exception>(() => Check.Yourself(() => test == string.Empty))
                 .Message.ShouldBe("(\"Hi there\" == String.Empty) should be true");
 
             var test2 = "Why hello";
             Should
-                .Throw<Exception>(() => Check.That(() => test2 == string.Empty))
+                .Throw<Exception>(() => Check.Yourself(() => test2 == string.Empty))
                 .Message.ShouldBe("(test2 == String.Empty) should be true");
         }
     }
