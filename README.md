@@ -150,6 +150,18 @@ Checks that the type contains a public constructor that takes the provided param
 		typeof(TaxStatus));
 
 
+### Guid
+The `Guid` invariant checker contains check methods for `Guid`s.
+
+#### `IsNotNullOrEmpty`
+Checks that the target is not null or equal to `Guid.Empty`.
+
+	public Entity(Guid id)
+	{
+		Check.That(() => id).IsNotNullOrEmpty();
+	}
+	
+
 ### Extensibility
 
 Extend Check with a custom invariant checker. Create a checker that implements `CheckGenericInvariant<T>`:

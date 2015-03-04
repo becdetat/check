@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CheckBooleanInvariantTests.cs" />
     <Compile Include="CheckGenericInvariantIsNotNullTests.cs" />
+    <Compile Include="CheckGuidInvariantTests.cs" />
     <Compile Include="CheckStringInvariantIsNotNullOrEmptyTests.cs" />
     <Compile Include="CheckTypeInvariantHasConstructorWithParameters.cs" />
     <Compile Include="ExtensibilityTests.cs" />

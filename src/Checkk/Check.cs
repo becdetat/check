@@ -67,5 +67,16 @@ namespace Checkk
         {
             return new CheckBooleanInvariant(target);
         }
+
+        /// <summary>
+        /// Create an invariant check instance for a Guid field.
+        /// </summary>
+        /// <param name="target">An expression whose body is a Guid field</param>
+        /// <returns>An invariant check instance for a Guid</returns>
+        public static CheckGuidInvariant That(
+            Expression<Func<Guid>> target)
+        {
+            return new CheckGuidInvariant(target);
+        }
     }
 }

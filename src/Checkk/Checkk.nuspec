@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A class invariants helper library</description>
     <summary></summary>
-    <releaseNotes>Fix namespace</releaseNotes>
+    <releaseNotes>Add Guid IsNotNullOrEmpty check</releaseNotes>
     <tags>class invariant invariants domain validation check guard clause assert assertion contract</tags>
   </metadata>
 </package>
