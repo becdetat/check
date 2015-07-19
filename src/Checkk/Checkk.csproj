@@ -46,6 +46,7 @@
     <Compile Include="CheckStringInvariant.cs" />
     <Compile Include="CheckTypeInvariant.cs" />
     <Compile Include="Exceptions\InvariantFieldException.cs" />
+    <Compile Include="Exceptions\InvariantShouldBeFalseException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullOrEmptyException.cs" />
     <Compile Include="Exceptions\InvariantException.cs" />

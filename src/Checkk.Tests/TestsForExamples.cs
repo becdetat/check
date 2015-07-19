@@ -18,7 +18,7 @@ namespace Checkk.Tests
             Check.That(() => dateOfBirth.Year < 1990);
 
             var i1 = 10;
-            var ex1 = Should.Throw<Exception>(() => Check.That(() => i1 > 20));
+            var ex1 = Should.Throw<Exception>(() => Check.That(() => i1 > 20).IsTrue());
             ex1.Message.ShouldBe("(i1 > 20) should be true");
         }
     }
