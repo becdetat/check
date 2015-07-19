@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A class invariants helper library</description>
     <summary></summary>
-    <releaseNotes>Add Guid IsNotNullOrEmpty check</releaseNotes>
+    <releaseNotes>Mkae boolean checks consistent with other checks</releaseNotes>
     <tags>class invariant invariants domain validation check guard clause assert assertion contract</tags>
   </metadata>
 </package>
