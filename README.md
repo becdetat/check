@@ -17,7 +17,7 @@ Use [NuGet](https://www.nuget.org/packages/check):
 
     Check.That(() => firstName).IsNotNull();
     Check.That(() => lastName).IsNotNullOrEmpty();
-    Check.That(() => dateOfBirth.Year < 1989);
+    Check.That(() => dateOfBirth.Year < 1989).IsTrue();
 
 Failing checks throw an exception inheriting from `InvariantException`:
 
@@ -95,8 +95,8 @@ Ok so it sounded simple at first. This will work for any input (until it overflo
 
     double f(int a0, int ak)
     {
-        Check.That(() => a0 > 0);
-        Check.That(() => ak > 0);
+        Check.That(() => a0 > 0).IsTrue();
+        Check.That(() => ak > 0).IsTrue();
         
         // ...
 
@@ -114,6 +114,11 @@ Further reading:
 
 ## API
 
+Each `.Is` method takes an optional `message` parameter which overrides the automatically generated message.
+
+	Check.That(() => true).IsTrue("Bending the laws of space and time, are we?");
+
+
 ### Generic
 The generic invariant checker is the base type of all invariant checkers and contains the shared logic. If the type of the expression passed into `Check.That` isn't handled by a checker, a generic invariant checker will be returned.
 
@@ -122,10 +127,12 @@ Checks that the target expression result is not null.
 
 
 ### Boolean
-The boolean invariant checker takes an expression that results in a boolean, and immediately checks for boolean true. The resulting exception message displays the entire compiled expression for easier debugging:
+The boolean invariant checker checks that an expression that results in a boolean is true or false. The resulting exception message displays the entire compiled expression for easier debugging:
 
 	var i1 = 10;
-	Check.That(() => i1 > 20);	// throws InvariantShouldBeTrueException: "(i1 > 20) should be true"
+	Check.That(() => i1 > 20).IsTrue();	// throws InvariantShouldBeTrueException: "(i1 > 20) should be true"
+
+	Check.That(() => 20 > i1).IsFalse() // throws InvariantShouldBeFalseException
 
 
 ### String

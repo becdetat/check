@@ -51,7 +51,7 @@ namespace Checkk.Tests
             var exception = Should.Throw<Exception>(
                 () => Check.That(() => test).IsNotNullOrEmpty("Test is required"));
 
-            exception.Message.ShouldContainWithoutWhitespace("Test is required test should not be null or empty");
+            exception.Message.ShouldContainWithoutWhitespace("Test is required");
         }
     }
 }

@@ -28,12 +28,8 @@ namespace Checkk.Exceptions
             get
             {
                 return string.IsNullOrEmpty(_message) 
-                    ? AutoMessage : 
-                    string.Format(
-                        "{0}{1}{2}", 
-                        _message, 
-                        Environment.NewLine, 
-                        AutoMessage);
+                    ? AutoMessage 
+                    : _message;
             }
         }
     }
