@@ -1,7 +1,5 @@
 @echo off
-if exist "%VS120COMNTOOLS%vsvars32.bat" call "%VS120COMNTOOLS%vsvars32.bat" & goto VARSSET
-IF EXIST "%VS110COMNTOOLS%vsvars32.bat" call "%VS110COMNTOOLS%vsvars32.bat" & goto VARSSET
-IF EXIST "%VS100COMNTOOLS%vsvars32.bat" call "%VS100COMNTOOLS%vsvars32.bat" & goto VARSSET
+if exist "%VS140COMNTOOLS%vsvars32.bat" call "%VS140COMNTOOLS%vsvars32.bat" & goto VARSSET
 echo "Could not detect VS version!" & goto ERROR
 :VARSSET
 
