@@ -30,4 +30,24 @@ namespace Checkk.Tests
             public string Name { get; set; }
         }
     }
+
+    public class CheckAgainstConstant
+    {
+        [Fact]
+        public void CheckAgainstConstantWorks()
+        {
+            const string name = "Lando";
+
+            Should.Throw<InvariantShouldBeEqualToException<string>>(() => Check.That(() => name).IsEqualTo("Ackbar"));
+        }
+
+        [Fact]
+        public void CheckAgainstConstantHasNiceMessage()
+        {
+            const string name = "Biggs";
+
+            Should.Throw<InvariantShouldBeEqualToException<string>>(() => Check.That(() => name).IsEqualTo("Dooku"))
+                .Message.ShouldBe("\"Biggs\" should be equal to \"Dooku\"");
+        }
+    }
 }

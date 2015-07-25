@@ -125,6 +125,12 @@ The generic invariant checker is the base type of all invariant checkers and con
 #### `IsNotNull`
 Checks that the target expression result is not null.
 
+#### `IsEqualTo`
+Checks that the target expression result is equal to the provided value (using `.Equals()` to perform the comparison).
+
+#### `IsNotEqualTo`
+Checks that the target expression result is not equal to the provided value (using `.Equals()` to perform the comparison).
+
 
 ### Boolean
 The boolean invariant checker checks that an expression that results in a boolean is true or false. The resulting exception message displays the entire compiled expression for easier debugging:

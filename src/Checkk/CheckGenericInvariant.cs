@@ -23,10 +23,16 @@ namespace Checkk
         {
             get
             {
-                var body = Target.Body as MemberExpression;
-                if (body != null)
+                var memberExpression = Target.Body as MemberExpression;
+                if (memberExpression != null)
                 {
-                    return body.Member.Name;
+                    return memberExpression.Member.Name;
+                }
+
+                var constantExpression = Target.Body as ConstantExpression;
+                if (constantExpression != null)
+                {
+                    return $"Constant \"{constantExpression.Value}\"";
                 }
 
                 throw new ArgumentException($"Cannot get field name for expression '{Target}', the target body is {Target.Body.GetType()}");
@@ -43,6 +49,34 @@ namespace Checkk
             if (object.ReferenceEquals(TargetValue, null))
             {
                 throw new InvariantShouldNotBeNullException(FieldName, message);
+            }
+        }
+
+        /// <summary>
+        /// Check that the target value is equal to the expected value (using .Equals())
+        /// Throws an InvariantsShouldBeEqualToException if the target value does not equal the expected value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        /// <param name="message">An optional message that overrides the automatically generated one if the check fails</param>
+        public void IsEqualTo(T expected, string message = null)
+        {
+            if (!TargetValue.Equals(expected))
+            {
+                throw new InvariantShouldBeEqualToException<T>(FieldName, message, TargetValue, expected);
+            }
+        }
+
+        /// <summary>
+        /// Check that the target value is not equal to the expected value (using .Equals())
+        /// Throws an InvariantsShouldBeEqualToException if the target value does equals the expected value.
+        /// </summary>
+        /// <param name="expected">The expected value</param>
+        /// <param name="message">An optional message that overrides the automatically generated one if the check fails</param>
+        public void IsNotEqualTo(T expected, string message = null)
+        {
+            if (TargetValue.Equals(expected))
+            {
+                throw new InvariantShouldNotBeEqualToException<T>(FieldName, message, TargetValue, expected);
             }
         }
     }

@@ -7,9 +7,6 @@ namespace Checkk.Exceptions
         {
         }
 
-        protected override string AutoMessage
-        {
-            get { return string.Format("{0} should not be null", FieldName); }
-        }
+        protected override string AutoMessage => $"{FieldName} should not be null";
     }
 }

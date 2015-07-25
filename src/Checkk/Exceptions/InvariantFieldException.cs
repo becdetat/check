@@ -10,9 +10,6 @@ namespace Checkk.Exceptions
             FieldName = fieldName;
         }
 
-        protected override string AutoMessage
-        {
-            get { return string.Format("{0} is invalid", FieldName); }
-        }
+        protected override string AutoMessage => $"{FieldName} is invalid";
     }
 }
