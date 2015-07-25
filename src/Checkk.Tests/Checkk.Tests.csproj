@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckAgainstAProperty.cs" />
     <Compile Include="CheckBooleanInvariantTests.cs" />
     <Compile Include="CheckGenericInvariantIsNotNullTests.cs" />
     <Compile Include="CheckGuidInvariantTests.cs" />
