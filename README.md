@@ -131,6 +131,9 @@ Checks that the target expression result is equal to the provided value (using `
 #### `IsNotEqualTo`
 Checks that the target expression result is not equal to the provided value (using `.Equals()` to perform the comparison).
 
+### `IsOneOf` and `IsNotOneOf`
+Checks that the target expression result is or is not one of the provided values (using `.Contains()` to perform the comparison).
+
 
 ### Boolean
 The boolean invariant checker checks that an expression that results in a boolean is true or false. The resulting exception message displays the entire compiled expression for easier debugging:

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Linq.Expressions;
 using Checkk.Exceptions;
 
@@ -77,6 +78,32 @@ namespace Checkk
             if (TargetValue.Equals(expected))
             {
                 throw new InvariantShouldNotBeEqualToException<T>(FieldName, message, TargetValue, expected);
+            }
+        }
+
+        /// <summary>
+        /// Check that the target value is one of the expected values (using expected.Contains()).
+        /// Throws an InvariantsShouldBeEqualToException if the target value is not one of the expected values.
+        /// </summary>
+        /// <param name="expected">The expected values</param>
+        public void IsOneOf(params T[] expected)
+        {
+            if (!expected.Contains(TargetValue))
+            {
+                throw new InvariantShouldBeOneOfException<T>(FieldName, TargetValue, expected);
+            }
+        }
+
+        /// <summary>
+        /// Check that the target value is not one of the expected values (using expected.Contains()).
+        /// Throws an InvariantsShouldNotBeEqualToException if the target value is one of the expected values.
+        /// </summary>
+        /// <param name="expected">The expected values</param>
+        public void IsNotOneOf(params T[] expected)
+        {
+            if (expected.Contains(TargetValue))
+            {
+                throw new InvariantShouldNotBeOneOfException<T>(FieldName, TargetValue, expected);
             }
         }
     }

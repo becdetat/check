@@ -5,7 +5,8 @@
         private readonly T _received;
         private readonly T _expected;
 
-        public InvariantShouldNotBeEqualToException(string fieldName, string message, T received, T expected) : base(fieldName, message)
+        public InvariantShouldNotBeEqualToException(string fieldName, string message, T received, T expected)
+            : base(fieldName, message)
         {
             _received = received;
             _expected = expected;

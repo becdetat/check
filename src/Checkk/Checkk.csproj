@@ -48,6 +48,7 @@
     <Compile Include="Exceptions\InvariantFieldException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeFalseException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeEqualToException.cs" />
+    <Compile Include="Exceptions\InvariantShouldBeOneOfException.cs" />
     <Compile Include="Exceptions\InvariantShouldMatchRegexException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeEqualToException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullException.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Exceptions\InvariantException.cs" />
     <Compile Include="Exceptions\InvariantShouldHavePublicConstructorWithParametersException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeTrueException.cs" />
+    <Compile Include="Exceptions\InvariantShouldNotBeOneOfException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
