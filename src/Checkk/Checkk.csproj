@@ -49,6 +49,7 @@
     <Compile Include="Exceptions\InvariantShouldBeFalseException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeEqualToException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeOneOfException.cs" />
+    <Compile Include="Exceptions\InvariantShouldBeValidEmailAddressException.cs" />
     <Compile Include="Exceptions\InvariantShouldMatchRegexException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeEqualToException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullException.cs" />

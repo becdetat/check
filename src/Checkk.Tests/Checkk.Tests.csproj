@@ -57,6 +57,7 @@
     <Compile Include="CheckIsNotEqualToTests.cs" />
     <Compile Include="CheckStringInvariantIsNotNullOrEmptyTests.cs" />
     <Compile Include="CheckStringInvariantIsMatchForRegexTest.cs" />
+    <Compile Include="CheckStringInvariantIsValidEmailAddress.cs" />
     <Compile Include="CheckTypeInvariantHasConstructorWithParameters.cs" />
     <Compile Include="ExtensibilityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

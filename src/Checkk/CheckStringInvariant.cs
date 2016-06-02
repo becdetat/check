@@ -10,6 +10,8 @@ namespace Checkk
     /// </summary>
     public class CheckStringInvariant : CheckGenericInvariant<string>
     {
+        private readonly Regex _emailRegex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+
         public CheckStringInvariant(Expression<Func<string>> target)
             : base(target)
         {
@@ -50,6 +52,19 @@ namespace Checkk
             if (!regex.IsMatch(TargetValue))
             {
                 throw new InvariantShouldMatchRegexException(FieldName, TargetValue, regex, message);
+            }
+        }
+
+        /// <summary>
+        /// Check that the target value is a valid email address, according to the .NET regex found at http://emailregex.com/.
+        /// Throws an InvariantShouldBeValidEmailAddressException if the target is not a valid email address.
+        /// </summary>
+        /// <param name="message"></param>
+        public void IsValidEmailAddress(string message = null)
+        {
+            if (!_emailRegex.IsMatch(TargetValue))
+            {
+                throw new InvariantShouldBeValidEmailAddressException(FieldName, TargetValue, message);
             }
         }
     }

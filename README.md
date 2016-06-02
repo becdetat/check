@@ -159,8 +159,14 @@ Checks that the target expression matches the supplied regular expression.
 
 	var phone = "(07) 1234 5678";
 
-	Check.That(() => email).IsMatchForRegex(@"\([0]\d\) \d\d\d\d \d\d\d\d");
+	Check.That(() => phone).IsMatchForRegex(@"\([0]\d\) \d\d\d\d \d\d\d\d");
 
+#### `IsValidEmailAddress`
+Checks that the target expression is a valid email address, according to the .NET regex found at http://emailregex.com/.
+
+    var email = "email@domain.com";
+
+    Check.That(() => email).IsValidEmailAddress();
 
 ### Type
 The type invariant checker contains check methods for `System.Type`.
