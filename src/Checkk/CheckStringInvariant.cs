@@ -1,5 +1,6 @@
 using System;
 using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 using Checkk.Exceptions;
 
 namespace Checkk
@@ -24,6 +25,31 @@ namespace Checkk
             if (string.IsNullOrEmpty(TargetValue))
             {
                 throw new InvariantShouldNotBeNullOrEmptyException(FieldName, message);
+            }
+        }
+
+        /// <summary>
+        /// Check that the target value matches the regex.
+        /// Throws an InvariantShouldMatchRegexException if the target does not match the regex.
+        /// </summary>
+        /// <param name="regex">The regex to test against the target value</param>
+        /// <param name="message">An optional message that overrides the automatically generated one if the check fails</param>
+        public void IsMatchForRegex(string regex, string message = null)
+        {
+            IsMatchForRegex(new Regex(regex), message);
+        }
+
+        /// <summary>
+        /// Check that the target value matches the regex.
+        /// Throws an InvariantShouldMatchRegexException if the target does not match the regex.
+        /// </summary>
+        /// <param name="regex">The regex to test against the target value</param>
+        /// <param name="message">An optional message that overrides the automatically generated one if the check fails</param>
+        public void IsMatchForRegex(Regex regex, string message = null)
+        {
+            if (!regex.IsMatch(TargetValue))
+            {
+                throw new InvariantShouldMatchRegexException(FieldName, TargetValue, regex, message);
             }
         }
     }

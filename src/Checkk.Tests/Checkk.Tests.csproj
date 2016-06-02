@@ -54,6 +54,7 @@
     <Compile Include="CheckIsEqualToTests.cs" />
     <Compile Include="CheckIsNotEqualToTests.cs" />
     <Compile Include="CheckStringInvariantIsNotNullOrEmptyTests.cs" />
+    <Compile Include="CheckStringInvariantIsMatchForRegexTest.cs" />
     <Compile Include="CheckTypeInvariantHasConstructorWithParameters.cs" />
     <Compile Include="ExtensibilityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

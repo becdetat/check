@@ -151,6 +151,13 @@ Checks that the target expression result is not null or empty.
 
 	Check.That(() => occupation).IsNotNullOrEmpty();
 
+#### `IsMatchForRegex`
+Checks that the target expression matches the supplied regular expression.
+
+	var phone = "(07) 1234 5678";
+
+	Check.That(() => email).IsMatchForRegex(@"\([0]\d\) \d\d\d\d \d\d\d\d");
+
 
 ### Type
 The type invariant checker contains check methods for `System.Type`.

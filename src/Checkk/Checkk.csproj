@@ -48,6 +48,7 @@
     <Compile Include="Exceptions\InvariantFieldException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeFalseException.cs" />
     <Compile Include="Exceptions\InvariantShouldBeEqualToException.cs" />
+    <Compile Include="Exceptions\InvariantShouldMatchRegexException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeEqualToException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullException.cs" />
     <Compile Include="Exceptions\InvariantShouldNotBeNullOrEmptyException.cs" />
