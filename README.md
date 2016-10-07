@@ -22,7 +22,7 @@ Use [NuGet](https://www.nuget.org/packages/check):
 Failing checks throw an exception inheriting from `InvariantException`:
 
     var i1 = 10;
-    Check.That(() => i1 > 20);  // throws InvariantShouldBeTrueException: "(i1 > 20) should be true"
+    Check.That(() => i1 > 20).IsTrue();  // throws InvariantShouldBeTrueException: "(i1 > 20) should be true"
 
 Check can be extended with custom invariant checkers. Create a checker class that inherits from `CheckGenericInvariant<T>` and pass it to `Check.That` as a generic parameter for instantiation:
 
