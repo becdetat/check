@@ -16,5 +16,4 @@
     <releaseNotes>Better handling of getting expression field names, add IsEqualTo and IsNotEqualTo</releaseNotes>
     <tags>class invariant invariants domain validation check guard clause assert assertion contract</tags>
   </PropertyGroup>
-
 </Project>
