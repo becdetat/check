@@ -1,1 +1,1 @@
-dotnet build
+dotnet build ./Check.sln
